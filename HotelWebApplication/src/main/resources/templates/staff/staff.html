@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Meet the staff of London Hotels.">
+        <title>London Hotels | Staff</title>
+        <link rel="stylesheet" th:href="@{/css/staff/style.css}">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>London Hotels</h1>
+            <p class="subtitle">Get to know us!</p>
+        </header>
+
+        <main>
+            <table class="staff-table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:if="${#lists.isEmpty(staff)}">
+                        <td colspan="4">No staff members found.</td>
+                    </tr>
+                    <tr th:each="staffMember : ${staff}" th:unless="${#lists.isEmpty(staff)}">
+                        <td th:text="${staffMember.employeeNumber}" data-label="ID">&nbsp;</td>
+                        <td th:text="${staffMember.firstName}" data-label="First Name">&nbsp;</td>
+                        <td th:text="${staffMember.lastName}" data-label="Last Name">&nbsp;</td>
+                        <td th:text="${staffMember.position}" data-label="Position">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </body>
+</html>
