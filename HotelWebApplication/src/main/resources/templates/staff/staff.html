@@ -32,7 +32,7 @@
                         <td th:text="${staffMember.employeeNumber}" data-label="ID">&nbsp;</td>
                         <td th:text="${staffMember.firstName}" data-label="First Name">&nbsp;</td>
                         <td th:text="${staffMember.lastName}" data-label="Last Name">&nbsp;</td>
-                        <td th:text="${staffMember.position}" data-label="Position">&nbsp;</td>
+                        <td th:text="${staffMember.position.toString()}" data-label="Position">&nbsp;</td>
                     </tr>
                 </tbody>
             </table>

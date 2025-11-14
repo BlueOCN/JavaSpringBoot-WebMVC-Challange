@@ -6,12 +6,12 @@ public class Staff {
     private String employeeNumber;
     private String firstName;
     private String lastName;
-    private String position;
+    private Position position;
 
     public Staff() {
     }
 
-    public Staff(String employeeNumber, String firstName, String lastName, String position) {
+    public Staff(String employeeNumber, String firstName, String lastName, Position position) {
         this.employeeNumber = employeeNumber;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,11 +42,11 @@ public class Staff {
         this.lastName = lastName;
     }
 
-    public String getPosition() {
+    public Position getPosition() {
         return position;
     }
 
-    public void setPosition(String position) {
+    public void setPosition(Position position) {
         this.position = position;
     }
 
